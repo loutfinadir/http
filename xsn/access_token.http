@@ -1,0 +1,9 @@
+POST /oauth/token HTTP/1.1
+Host: 10.47.243.107:3002
+Content-Length: 111
+
+{
+    "user_name":"ADMIN",
+    "email":"ADMIN@mock.com",
+    "tenant" :"66999d0c-a6da-4c5c-a04d-046226ea1e37"
+}
