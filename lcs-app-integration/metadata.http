@@ -2,7 +2,7 @@ POST https://{{host}}/dwc/LINKEDDWC1/sap/bc/ina/service/v2/GetResponse?= HTTP/1.
 X-Csrf-Token: Fetch
 X-Sap-Boc-Approuter-Orca-Context: {{X-Sap-Boc-Approuter-Orca-Context}}
 Content-Type: application/json
-Authorization: Bearer {{accessToken}}
+Authorization: {{accessToken}}
 X-Sap-Boc-User-Properties: {{X-Sap-Boc-User-Properties}}
 Connection: keep-alive
 Content-Length: 5788

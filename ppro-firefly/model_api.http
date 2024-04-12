@@ -7,7 +7,7 @@ Appname: ppro-firefly-{{suffix}}
 Content-Type: application/json
 Accept: application/json
 Tenantuuid: 4f192c91-d1ab-41b1-9164-a2407317c9a0
-Authorization: Bearer {{accessToken}}
+Authorization: {{accessToken}}
 Content-Length: 322
 
 {
@@ -24,3 +24,106 @@ Content-Length: 322
         ]
     }
 }
+###
+POST https://seamlessplanning-fpa126-t01.orcastarkiller.canary.eu10.projectorca.cloud/sap/fpa/services/rest/fpa/model HTTP/1.1
+x-csrf-token: 59a7f75bd0987c40-Gzi-y4h4TX__netkY7rTY3WpCDI
+Tenantuuid: ee30821d-68e4-4087-ac2b-26216d3d149c
+Content-Type: application/json
+#Path: /sap/fpa/services/rest/fpa/model
+Accept: application/json
+Authorization: eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VhbWxlc3NwbGFubmluZy1mcGExMjYtdDAxLmF1dGhlbnRpY2F0aW9uLnNhcC5oYW5hLm9uZGVtYW5kLmNvbS90b2tlbl9rZXlzIiwia2lkIjoiZGVmYXVsdC1qd3Qta2V5LTU4ZjAzZjE3NGUiLCJ0eXAiOiJKV1QiLCJqaWQiOiAiMHprTnFxSjBRTzFTNFJWZ0MrYVc4VEhJejgxRWloWHZ4SWQ5azJ1SHQ1ST0ifQ.eyJqdGkiOiJhNDFjMDVlMzUzMDQ0OWJiYmUxNjNjNzQ4ZDZjNWFjZCIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiJlZTMwODIxZC02OGU0LTQwODctYWMyYi0yNjIxNmQzZDE0OWMiLCJ6ZG4iOiJzZWFtbGVzc3BsYW5uaW5nLWZwYTEyNi10MDEifSwieHMudXNlci5hdHRyaWJ1dGVzIjp7ImN1c3RvbTEiOltdLCJjdXN0b20yIjpbXSwiY3VzdG9tMyI6W10sImN1c3RvbTQiOltdLCJjdXN0b201IjpbXSwiZGlzcGxheU5hbWUiOltdLCJmYW1pbHlOYW1lIjpbIkxvdXRmaSJdLCJmdW5jdGlvbmFsQXJlYSI6W10sImdpdmVuTmFtZSI6WyJOYWRpciJdLCJHcm91cHMiOlsic2FjIiwic2FjIl0sInByZWZlcnJlZExhbmd1YWdlIjpbXX0sImNuZiI6eyJ4NXQjUzI1NiI6IkNZZzJjYzNQUzE2RzRaRklNNDJ4TDRSS3cwMnlvUXVlc2h0YmFENktVNXMifSwieHMuc3lzdGVtLmF0dHJpYnV0ZXMiOnsieHMuc2FtbC5ncm91cHMiOlsic2FjIl0sInhzLnJvbGVjb2xsZWN0aW9ucyI6WyJzYWMudXNlcnMiXX0sImdpdmVuX25hbWUiOiJuYWRpci5sb3V0ZmkiLCJmYW1pbHlfbmFtZSI6InNhcC5jb20iLCJzdWIiOiJmMDkzMDA0Zi00MmJhLTRiN2ItYWYwMS02NzhiNThmZjc5ZTEiLCJzY29wZSI6WyJhcHByb3V0ZXItc2FjLW9yY2FzdGFya2lsbGVyIXQyMzE5LnNhcC5mcGEudXNlciIsIm1hcmtldHBsYWNlLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOS51c2VyLnNlc3Npb24iLCJvcGVuaWQiLCJoYW5hLXhzLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOS51c2VyLnNlc3Npb24iLCJkd2Fhcy1jb3JlLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOS51c2VyLnNlc3Npb24iLCJkZWVwc2VhLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOS51c2VyLnNlc3Npb24iLCJ1c2VybWFuYWdlbWVudC1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkuc2Vzc2lvbi5jcmVhdGUiLCJ1YWEudXNlciJdLCJjbGllbnRfaWQiOiJzYi1hcHByb3V0ZXItc2FjLW9yY2FzdGFya2lsbGVyIXQyMzE5IiwiY2lkIjoic2ItYXBwcm91dGVyLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOSIsImF6cCI6InNiLWFwcHJvdXRlci1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkiLCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwidXNlcl9pZCI6ImYwOTMwMDRmLTQyYmEtNGI3Yi1hZjAxLTY3OGI1OGZmNzllMSIsIm9yaWdpbiI6Im9yY2EtY2YuYWNjb3VudHM0MDAub25kZW1hbmQuY29tIiwidXNlcl9uYW1lIjoibmFkaXIubG91dGZpQHNhcC5jb20iLCJlbWFpbCI6Im5hZGlyLmxvdXRmaUBzYXAuY29tIiwiYXV0aF90aW1lIjoxNzA4NjE1ODUwLCJyZXZfc2lnIjoiYTU5MDVlZmIiLCJpYXQiOjE3MDg2MTU4NTAsImV4cCI6MTcwODY1OTA1MCwiaXNzIjoiaHR0cHM6Ly9zZWFtbGVzc3BsYW5uaW5nLWZwYTEyNi10MDEuYXV0aGVudGljYXRpb24uc2FwLmhhbmEub25kZW1hbmQuY29tL29hdXRoL3Rva2VuIiwiemlkIjoiZWUzMDgyMWQtNjhlNC00MDg3LWFjMmItMjYyMTZkM2QxNDljIiwiYXVkIjpbIm1hcmtldHBsYWNlLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOS51c2VyIiwidWFhIiwib3BlbmlkIiwiZHdhYXMtY29yZS1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkudXNlciIsInNiLWFwcHJvdXRlci1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkiLCJ1c2VybWFuYWdlbWVudC1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkuc2Vzc2lvbiIsImFwcHJvdXRlci1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkuc2FwLmZwYSIsImhhbmEteHMtc2FjLW9yY2FzdGFya2lsbGVyIXQyMzE5LnVzZXIiLCJkZWVwc2VhLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOS51c2VyIl19.LgQx7j-54hGfFYGlCHJbSJlQV8wzvGwJ2nwYscG9tVQS4H0bRRFIX3SmfPEBH99pFcqnmZN8CmcOY67oomelo4FPyTRvtv9pHehJANcQyOCTP3auWol8YAl2waWJSbbHdYR4A4Jh3i03BHpieEDdN_Ny-PrM7ge0_eP0Vo01oOogKhz5-nL47dewGHCPBH--oR2qDiL9qNU3gExfikeMP8We1RhAMwegowJ2uFQASWP05O57LzDrIL7SatHStp2XSp0L-qbHaykiRpQgvInK_sFsOHw0-AEM9FNhpjUvmcoqcf1PEYlHyBdoaE4jr82EDQ6BqCkhoeu01l_Fc7iMfg
+Content-Length: 322
+
+{
+	"action":"list",
+    "data": {
+		"tenantUuid": "ee30821d-68e4-4087-ac2b-26216d3d149c",
+        "cubeIDs": [
+            "t.UPMEXD.C18l11j1254sdnva7fjehe6t76n:C18l11j1254sdnva7fjehe6t76n"
+        ],
+        "cubeProperties": [
+            "id",
+            "description",
+            "repositoryId"
+        ]
+    }
+}
+
+###
+POST http://{{host}}:8000/sap/fpa/services/rest/fpa/dataintegration/v2/models?keepLog=true&tenant={{tenantid}} HTTP/1.1
+Authorization: {{accessToken}} 
+x-csrf-token: 90784D5361D5C249AAB5CB25224CC8A4
+Content-Type: application/json
+Accept: application/json
+
+{
+    "metadata":
+    {
+        "description": "drug_store",
+        "parentId": "SAC_CONTENT",
+        "newDimensions":
+        [
+            {
+                "metadata":
+                {
+                    "description": "Time",
+                    "name": "Time",
+                    "fromDate": "2015/01/01",
+                    "granularity": "Year",
+                    "toDate": "2016/01/01",
+                    "type": "TimeHANA",
+                    "idSourceColumn": "Time"
+                }
+            },
+            {
+                "metadata":
+                {
+                    "name": "Store",
+                    "description": "Store",
+                    "type": "Generic",
+                    "idSourceColumn": "StoreID",
+                    "descriptionSourceColumn": "Store_Name"
+                }
+            },
+            {
+                "metadata":
+                {
+                    "name": "Version",
+                    "type": "VersionDim",
+                    "categorySourceColumn": "Category",
+                    "versionSourceColumn": "Version"
+                }
+            }         
+        ],
+        "measures":
+        [
+            {
+                "description" :"signed data",
+                "sourceColumn": "Value"
+            }
+        ]
+    },
+    "data":
+    {
+        "sourceColumnOrder":
+        [
+            "Time","StoreID", "Store_Name" ,"Value", "Version", "Category"
+        ],
+        "rowData":
+        [
+            ["2015-01-01", "AHDSA", "Pharma", 100, "Actual", "Actuals"],
+            ["2015-01-01", "BIOUQ", "Pharma2", 400, "Plan", "Planning"],
+            ["2015-01-01", "CIIUE", "Pharma3", -500, "ForeCast", "Forecast"]
+        ]
+    }
+}
+
+
+###
+GET http://{{host}}/sap/fpa/services/csrf.xsjs HTTP/1.1
+#Path: /sap/fpa/services/csrf.xsjs
+#tenant: e647d8a0-9ea6-4142-890e-38a14939e3da
+X-CSRF-Token: Fetch
+#Authorization: {{accessToken}} 
+Content-Type: application/json
+Accept: application/json

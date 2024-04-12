@@ -5,7 +5,7 @@ Password: {{password}}
 Content-Type: application/json
 Tenanturl: {{tenanturl}}
 Appname: ppro-firefly-{{suffix}}
-Authorization: Bearer {{accessToken}}
+Authorization: {{accessToken}}
 Content-Length: 221
 
 {

@@ -1,0 +1,60 @@
+
+POST http://{{host}}:8300/sap/fpa/services/rest/fpa/model?tenant={{tenantid}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{accessToken}}
+
+{
+  "action": "update",
+  "data": {
+    "resourceId": "C71cugo3t54a6msl02petf2m80",
+    "parentResId": "PUBLIC",
+    "resourceType": "CUBE",
+    "name": "TestLocking",
+    "description": "",
+    "updateOpt": {
+      "action": "regenerate",
+      "artifacts": {
+        "MDSView": true,
+        "CalculationView": true,
+        "EPMArtifacts": true,
+        "MDSMetadata": true,
+        "DACArtifacts": true,
+        "Dimensions": true,
+        "DataAudit": true,
+        "CubeMasterdataView": true,
+        "DataLocking": true,
+        "FactAdapterView": false
+      }
+    }
+  }
+}
+###
+POST http://10.47.243.107:8300/sap/fpa/services/rest/fpa/model?tenant={{tenantid}} HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4NzRmY2RjMTM2MzY0NTc4ODkyNjU0ZDFiY2IyODM2ZCIsImdpdmVuX25hbWUiOiIiLCJleHRfYXR0ciI6eyJlbmhhbmNlciI6IlhTVUFBIiwiemRuIjoiNjY5OTlEMEMtQTZEQS00QzVDLUEwNEQtMDQ2MjI2RUExRTM3In0sInhzLnVzZXIuYXR0cmlidXRlcyI6IiIsImZhbWlseV9uYW1lIjoiIiwic3ViIjoiOGM3MTVmNjctMzAzMi00NzkwLTg5Y2MtOWNkYzNkMGIwNWE2Iiwic2NvcGUiOlsiaGFuYS14cy1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkuc2FwLmZwYS5zZXJ2aWNlczo6TWFpbnRhaW5GUEEiLCJoYW5hLXhzLXNhYy1vcmNhc3RhcmtpbGxlciF0MjMxOS5zYXAuZnBhLnNlcnZpY2VzOjpJbnN0YWxsRlBBIiwiaGFuYS14cy1zYWMtb3JjYXN0YXJraWxsZXIhdDIzMTkuc2FwLmZwYS5zZXJ2aWNlczo6TW9uaXRvckZQQSIsImhhbmEteHMtc2FjLW9yY2FzdGFya2lsbGVyIXQyMzE5LnNhcC5mcGEuc2VydmljZXM6OlNhbXBsZXNBZG1pbiJdLCJjbGllbnRfaWQiOiJtb2NrQ2xpZW50IiwiY2lkIjoibW9ja0NsaWVudCIsImF6cCI6Im1vY2tDbGllbnQiLCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwidXNlcl9pZCI6IjhjNzE1ZjY3LTMwMzItNDc5MC04OWNjLTljZGMzZDBiMDVhNiIsIm9yaWdpbiI6Im9yY2EtY2YuYWNjb3VudHM0MDAub25kZW1hbmQuY29tIiwidXNlcl9uYW1lIjoiQURNSU4iLCJlbWFpbCI6IkFETUlOQG1vY2suY29tIiwiYXV0aF90aW1lIjoxNzEyMTY0NjA3LjMwMSwicmV2X3NpZyI6IjdkYWFlNTYiLCJpYXQiOjE3MTIxNjQ2MDcuMzAxLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjMwMDIvb2F1dGgvdG9rZW4iLCJ6aWQiOiI2Njk5OWQwYy1hNmRhLTRjNWMtYTA0ZC0wNDYyMjZlYTFlMzciLCJhdWQiOlsibW9ja0NsaWVudCIsImhhbmEteHMtc2FjLW9yY2FzdGFya2lsbGVyIXQyMzE5Il19.EqRGG9c6pZDijg_pxsTLqZjfMOmLXblhqgX82NjAsDZNdEqgdJJwAFPKXYPAhLxkvcgGHTeROjE7IVif7wpBCQ
+
+{
+  "action": "update",
+  "data": {
+    "resourceId": "C71cugo3t54a6msl02petf2m80",
+    "parentResId": "PUBLIC",
+    "resourceType": "CUBE",
+    "name": "TestLocking",
+    "description": "",
+    "updateOpt": {
+      "action": "regenerate",
+      "artifacts": {
+        "MDSView": true,
+        "CalculationView": true,
+        "EPMArtifacts": true,
+        "MDSMetadata": true,
+        "DACArtifacts": true,
+        "Dimensions": true,
+        "DataAudit": true,
+        "CubeMasterdataView": true,
+        "DataLocking": true,
+        "FactAdapterView": false
+      }
+    }
+  }
+}
