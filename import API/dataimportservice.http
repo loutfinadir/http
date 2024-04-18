@@ -1,0 +1,223 @@
+# https://wiki.one.int.sap/wiki/display/OrcaDev/FPA58+-+Triaging+Tickets
+# https://github.wdf.sap.corp/orca/dataimportservice
+# https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/14cac91febef464dbb1efce20e3f1613/fe6efb8aba9444c6a3ce21eef02bba62.html
+# https://community.sap.com/t5/technology-blogs-by-members/rest-api-integration-for-sap-analytics-cloud-gantt-chart-widget/ba-p/13572174
+# Error codes: https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/14cac91febef464dbb1efce20e3f1613/f99e725fc97149f4b37faf5e00c07d44.html
+
+### Get CSRF Token
+GET https://{{host}}/sap/fpa/services/csrf.xsjs HTTP/1.1
+#Path: /sap/fpa/services/csrf.xsjs
+X-CSRF-Token: Fetch
+Authorization: {{accessToken}}
+Content-Type: application/json
+Accept: application/json
+
+### Get Metadata
+GET https://{{disDestination}}/models/{{modelID}}/metadata HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: {{X-Csrf-Token}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+#### Master Data
+### Create job for Import data to master table
+POST https://{{disDestination}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: {{X-Csrf-Token}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Mapping": {
+        "Date___CALMONTH": "Date",
+        "ExplanationInfluencer___ID": "ExplanationInfluencer",
+        "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+        "Version___ID": "Version",
+        "SSN___ID": "SSN"
+    }
+}
+
+###
+### Post master data on Job
+POST https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Mapping": {
+        "Date___CALMONTH": "Date",
+        "ExplanationInfluencer___ID": "ExplanationInfluencer",
+        "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+        "Version___ID": "Version",
+        "SSN___ID": "SSN"
+    },
+    "Data": [
+        {
+            "Version": "public.Classification",
+            "Date": "202405",
+            "ExplanationInfluencer": "education2",
+            "ExplanationInfluencerValue": "Male2",
+            "ExplanationStrength": "0.40",
+            "SSN": "19"
+        },
+        {
+            "Version": "public.Classification",
+            "Date": "202406",
+            "ExplanationInfluencer": "education3",
+            "ExplanationInfluencerValue": "Prof-school3",
+            "ExplanationStrength": "0.70",
+            "SSN": "20"
+        }
+    ] 
+}
+### Fact Data
+### Create job for Import data to Fact Table
+POST https://{{disDestination}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: {{X-Csrf-Token}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Mapping": {
+        "ExplanationInfluencer": "ExplanationInfluencer",
+        "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+        "Date": "Date",
+        "SSN": "SSN",
+        "Version": "Version",
+        "ExplanationStrength": "ExplanationStrength"
+    },
+    "JobSettings": { 
+        "importMethod": "Append" 
+    } 
+}
+
+### list jobs
+GET https://{{disDestination}}/jobs HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### Post data on Job
+POST https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Mapping": {
+        "ExplanationInfluencer": "ExplanationInfluencer",
+        "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+        "Date": "Date",
+        "SSN": "SSN",
+        "Version": "Version",
+        "ExplanationStrength": "ExplanationStrength"
+    },
+    "Data": [
+        {
+            "Version": "public.Actual",
+            "Date": "202404",
+            "ExplanationInfluencer": "education",
+            "ExplanationInfluencerValue": "Male",
+            "ExplanationStrength": "1234.56",
+            "SSN": "16"
+        },
+        {
+            "Version": "public.Actual",
+            "Date": "202405",
+            "ExplanationInfluencer": "education",
+            "ExplanationInfluencerValue": "Prof-school",
+            "ExplanationStrength": "10.00",
+            "SSN": "16"
+        }
+    ] 
+}
+
+### validate job
+POST https://{{disDestination}}/jobs/{{jobID}}/validate HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### run job
+POST https://{{disDestination}}/jobs/{{jobID}}/run HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### job status
+GET https://{{disDestination}}/jobs/{{jobID}}/status HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+
+### read invalid rows from job
+GET https://{{disDestination}}/jobs/{{jobID}}/invalidRows HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### delete job
+DELETE https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### oneClick import
+POST https://{{disDestination}}/import/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: {{X-Csrf-Token}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: text/csv
+Accept: application/json
+ 
+Version,Date,ExplanationInfluencer,ExplanationInfluencerValue,ExplanationStrength,SSN
+public.Actual,202303,TX100,SHP_01,1234.56,17
+public.Actual,202304,TX101,SHP_02,10.00,18
+
+
