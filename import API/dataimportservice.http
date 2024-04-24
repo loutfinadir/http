@@ -15,7 +15,7 @@ Accept: application/json
 ### Get Metadata
 GET https://{{disDestination}}/models/{{modelID}}/metadata HTTP/1.1
 Authorization: {{accessTechToken}}
-x-csrf-token: {{X-Csrf-Token}}
+x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
 x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
 x-sap-boc-impersonated-user: {{impersonatedUser}}
@@ -55,27 +55,20 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "Mapping": {
-        "Date___CALMONTH": "Date",
-        "ExplanationInfluencer___ID": "ExplanationInfluencer",
-        "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
-        "Version___ID": "Version",
-        "SSN___ID": "SSN"
-    },
     "Data": [
         {
-            "Version": "public.Classification",
+            "Version": "private.X.MyClassif",
             "Date": "202405",
-            "ExplanationInfluencer": "education2",
-            "ExplanationInfluencerValue": "Male2",
-            "ExplanationStrength": "0.40",
-            "SSN": "19"
+            "ExplanationInfluencer": "education9",
+            "ExplanationInfluencerValue": "Male9",
+            "ExplanationStrength": "0.99",
+            "SSN": "20"
         },
         {
-            "Version": "public.Classification",
+            "Version": "private.X.MyClassif",
             "Date": "202406",
-            "ExplanationInfluencer": "education3",
-            "ExplanationInfluencerValue": "Prof-school3",
+            "ExplanationInfluencer": "education9",
+            "ExplanationInfluencerValue": "Prof-school9",
             "ExplanationStrength": "0.70",
             "SSN": "20"
         }

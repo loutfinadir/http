@@ -1,0 +1,57 @@
+
+### ping
+GET https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/ping HTTP/1.1
+
+### models create job for importing data
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/dis/models/{{modelID}}?tenantUuid={{X-Sap-Boc-Tenant-id}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+#x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Mapping": {
+        "Date___CALMONTH": "Date",
+        "ExplanationInfluencer___ID": "ExplanationInfluencer",
+        "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+        "Version___ID": "Version",
+        "SSN___ID": "SSN"
+    }
+}
+
+### models create job for importing data
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+#x-sap-boc-impersonated-user: {{impersonatedUser}}
+impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Mapping": {
+        "Date___CALMONTH": "Date",
+        "ExplanationInfluencer___ID": "ExplanationInfluencer",
+        "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+        "Version___ID": "Version",
+        "SSN___ID": "SSN"
+    }
+}
+
+### Post data on Job
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/dis/jobs/{{jobID}} HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+#x-sap-boc-impersonated-user: {{impersonatedUser}}
+impersonated-user: {{impersonatedUser}}
+Content-Type: text/plain
+Accept: application/json
+
+http://10.47.240.48:8080/SAC_HANA_DATASETS/DUs/Models/composer/data/apply_census_v1.csv
