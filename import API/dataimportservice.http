@@ -35,11 +35,14 @@ Accept: application/json
 
 {
     "Mapping": {
-        "Date___CALMONTH": "Date",
-        "ExplanationInfluencer___ID": "ExplanationInfluencer",
-        "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
-        "Version___ID": "Version",
-        "SSN___ID": "SSN"
+     "OutlierIndicator___ID": "OutlierIndicator",
+      "Date___CALMONTH": "Date",
+      "SSN___ID": "SSN",
+      "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+      "ExplanationInfluencer___ID": "ExplanationInfluencer",
+      "Version___ID": "Version",
+      "PredictedCategory___ID": "PredictedCategory",
+      "ExplanationRank___ID": "ExplanationRank"
     }
 }
 

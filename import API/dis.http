@@ -34,12 +34,18 @@ Content-Type: application/json
 Accept: application/json
 
 {
+    "DefaultValues": {
+        "Version": "public.Actual"
+    },
     "Mapping": {
-        "Date___CALMONTH": "Date",
-        "ExplanationInfluencer___ID": "ExplanationInfluencer",
-        "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
-        "Version___ID": "Version",
-        "SSN___ID": "SSN"
+     "OutlierIndicator___ID": "OutlierIndicator",
+      "Date___CALMONTH": "Date",
+      "SSN___ID": "SSN",
+      "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+      "ExplanationInfluencer___ID": "ExplanationInfluencer",
+      "Version___ID": "Version",
+      "PredictedCategory___ID": "PredictedCategory",
+      "ExplanationRank___ID": "ExplanationRank"
     }
 }
 
@@ -54,4 +60,4 @@ impersonated-user: {{impersonatedUser}}
 Content-Type: text/plain
 Accept: application/json
 
-http://10.47.240.48:8080/SAC_HANA_DATASETS/DUs/Models/composer/data/apply_census_v1.csv
+https://raw.githubusercontent.com/loutfinadir/http/main/data/classification/applyout/apply_census_v1.csv
