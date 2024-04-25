@@ -1,3 +1,4 @@
 cert/certificate-cf.txt
 cert/key-cf.txt
 .DS_Store
+.vscode/settings.json
