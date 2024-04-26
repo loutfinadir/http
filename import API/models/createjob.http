@@ -1,0 +1,30 @@
+### models create job for importing data
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+#x-sap-boc-impersonated-user: {{impersonatedUser}}
+impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.test",
+        "Date": "202407"
+    },
+    "Mapping": {
+     "OutlierIndicator___ID": "OutlierIndicator",
+      "Date___CALMONTH": "Date",
+      "SSN___ID": "SSN",
+      "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+      "ExplanationInfluencer___ID": "ExplanationInfluencer",
+      "Version___ID": "Version",
+      "PredictedCategory___ID": "PredictedCategory",
+      "ExplanationRank___ID": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+
+}

@@ -4,6 +4,8 @@
 # https://community.sap.com/t5/technology-blogs-by-members/rest-api-integration-for-sap-analytics-cloud-gantt-chart-widget/ba-p/13572174
 # Error codes: https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/14cac91febef464dbb1efce20e3f1613/f99e725fc97149f4b37faf5e00c07d44.html
 
+# https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/14cac91febef464dbb1efce20e3f1613/fe6efb8aba9444c6a3ce21eef02bba62.html
+
 ### Get CSRF Token
 GET https://{{host}}/sap/fpa/services/csrf.xsjs HTTP/1.1
 #Path: /sap/fpa/services/csrf.xsjs
@@ -102,16 +104,6 @@ Accept: application/json
     } 
 }
 
-### list jobs
-GET https://{{disDestination}}/jobs HTTP/1.1
-x-csrf-token: Fetch
-Authorization: {{accessTechToken}}
-x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
-x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
-x-sap-boc-impersonated-user: {{impersonatedUser}}
-Content-Type: application/json
-Accept: application/json
-
 ### Post data on Job
 POST https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
 x-csrf-token: Fetch
@@ -150,57 +142,6 @@ Accept: application/json
         }
     ] 
 }
-
-### validate job
-POST https://{{disDestination}}/jobs/{{jobID}}/validate HTTP/1.1
-x-csrf-token: Fetch
-Authorization: {{accessTechToken}}
-x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
-x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
-x-sap-boc-impersonated-user: {{impersonatedUser}}
-Content-Type: application/json
-Accept: application/json
-
-### run job
-POST https://{{disDestination}}/jobs/{{jobID}}/run HTTP/1.1
-x-csrf-token: Fetch
-Authorization: {{accessTechToken}}
-x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
-x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
-x-sap-boc-impersonated-user: {{impersonatedUser}}
-Content-Type: application/json
-Accept: application/json
-
-### job status
-GET https://{{disDestination}}/jobs/{{jobID}}/status HTTP/1.1
-x-csrf-token: Fetch
-Authorization: {{accessTechToken}}
-x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
-x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
-x-sap-boc-impersonated-user: {{impersonatedUser}}
-Content-Type: application/json
-Accept: application/json
-
-
-### read invalid rows from job
-GET https://{{disDestination}}/jobs/{{jobID}}/invalidRows HTTP/1.1
-x-csrf-token: Fetch
-Authorization: {{accessTechToken}}
-x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
-x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
-x-sap-boc-impersonated-user: {{impersonatedUser}}
-Content-Type: application/json
-Accept: application/json
-
-### delete job
-DELETE https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
-x-csrf-token: Fetch
-Authorization: {{accessTechToken}}
-x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
-x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
-x-sap-boc-impersonated-user: {{impersonatedUser}}
-Content-Type: application/json
-Accept: application/json
 
 ### oneClick import
 POST https://{{disDestination}}/import/{{modelID}} HTTP/1.1
