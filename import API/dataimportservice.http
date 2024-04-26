@@ -35,7 +35,7 @@ Accept: application/json
 
 {
     "Mapping": {
-     "OutlierIndicator___ID": "OutlierIndicator",
+      "OutlierIndicator___ID": "OutlierIndicator",
       "Date___CALMONTH": "Date",
       "SSN___ID": "SSN",
       "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",

@@ -35,7 +35,8 @@ Accept: application/json
 
 {
     "DefaultValues": {
-        "Version": "public.Actual"
+        "Version": "public.Actual",
+        "Date": "202401"
     },
     "Mapping": {
      "OutlierIndicator___ID": "OutlierIndicator",
@@ -45,8 +46,11 @@ Accept: application/json
       "ExplanationInfluencer___ID": "ExplanationInfluencer",
       "Version___ID": "Version",
       "PredictedCategory___ID": "PredictedCategory",
-      "ExplanationRank___ID": "ExplanationRank"
+      "ExplanationRank___ID": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
     }
+
 }
 
 ### Post data on Job
