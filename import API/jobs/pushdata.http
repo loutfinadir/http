@@ -1,3 +1,6 @@
+# https://raw.githubusercontent.com/loutfinadir/http/main/data/classification/applyout/APPLY_1M.csv
+# https://raw.githubusercontent.com/loutfinadir/http/main/data/classification/applyout/apply_census_v1.csv
+
 ### Post data on Job
 POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/dis/jobs/{{jobID}} HTTP/1.1
 x-csrf-token: Fetch

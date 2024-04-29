@@ -11,7 +11,7 @@ Accept: application/json
 
 {
     "DefaultValues": {
-        "Version": "public.test",
+        "Version": "public.apply_10000",
         "Date": "202407"
     },
     "Mapping": {
