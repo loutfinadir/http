@@ -1,0 +1,40 @@
+### Get Metadata
+GET https://{{disDestination}}/models/{{modelID}}/metadata HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### get public dimensions
+GET https://{{disDestination}}/publicDimensions HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### Returns a list of supported import types for a given public dimension
+GET https://{{disDestination}}/publicDimensions/{{publicDimensionId}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### Get public dimension metadata
+GET https://{{disDestination}}/publicDimensions/{{publicDimensionId}}/metadata HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+

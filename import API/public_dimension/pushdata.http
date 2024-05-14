@@ -12,4 +12,4 @@ impersonated-user: {{impersonatedUser}}
 Content-Type: text/plain
 Accept: application/json
 
-https://raw.githubusercontent.com/loutfinadir/http/main/data/classification/applyout/apply_500.csv
+https://raw.githubusercontent.com/loutfinadir/http/main/data/classification/applyout/SSN.csv

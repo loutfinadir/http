@@ -1,0 +1,45 @@
+### models create job for importing data
+POST https://{{disDestination}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+#x-sap-boc-impersonated-user: {{impersonatedUser}}
+impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202407"
+    },
+    "Mapping": {
+    "Version___ID": "Version",
+      "Date___CALMONTH": "Date",
+      "ExplanationInfluencer___ID": "ExplanationInfluencer",
+      "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+      "ExplanationRank___ID": "ExplanationRank",
+      "PredictedCategory___ID": "PredictedCategory",
+      "OutlierIndicator___ID": "OutlierIndicator",
+      "SSN___ID": "SSN"
+    }
+
+}
+
+### Creates an import job for a given public dimension
+POST https://{{disDestination}}/publicDimensions/{{publicDimensionId}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+#impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Mapping": {
+      "ID": "ID"
+    }
+}
