@@ -499,3 +499,4 @@ SSN,ExplanationInfluencer,ExplanationInfluencerValue,ExplanationRank,PredictedCa
 46,capital_gain,0,6,,,-0.31,
 46,capital_loss,0,7,,,-0.12,
 46,education_num,9,3,,,-0.69,
+50,education_num,9,3,,,-0.69,
