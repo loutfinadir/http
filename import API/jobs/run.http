@@ -1,5 +1,5 @@
 ### run job
-POST https://{{disDestination}}/jobs/{{jobID}}/run HTTP/1.1
+POST https://{{dataimportservice}}/jobs/{{jobID}}/run HTTP/1.1
 x-csrf-token: Fetch
 Authorization: {{accessTechToken}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}

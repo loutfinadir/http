@@ -1,5 +1,5 @@
-### job status
-GET https://{{dataimportservice}}/jobs/{{jobID}}/status HTTP/1.1
+### get models
+GET https://{{dataimportservice}}/models HTTP/1.1
 x-csrf-token: Fetch
 Authorization: {{accessTechToken}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}

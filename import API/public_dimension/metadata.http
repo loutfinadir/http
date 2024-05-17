@@ -1,5 +1,5 @@
 ### Get Metadata
-GET https://{{disDestination}}/models/{{modelID}}/metadata HTTP/1.1
+GET https://{{dataimportservice}}/models/Cmbk6h1v29rofv4sah4f0n9md4h/metadata HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -9,7 +9,7 @@ Content-Type: application/json
 Accept: application/json
 
 ### get public dimensions
-GET https://{{disDestination}}/publicDimensions HTTP/1.1
+GET https://{{dataimportservice}}/publicDimensions HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -19,7 +19,7 @@ Content-Type: application/json
 Accept: application/json
 
 ### Returns a list of supported import types for a given public dimension
-GET https://{{disDestination}}/publicDimensions/{{publicDimensionId}} HTTP/1.1
+GET https://{{dataimportservice}}/publicDimensions/{{publicDimensionId}} HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -29,7 +29,7 @@ Content-Type: application/json
 Accept: application/json
 
 ### Get public dimension metadata
-GET https://{{disDestination}}/publicDimensions/{{publicDimensionId}}/metadata HTTP/1.1
+GET https://{{dataimportservice}}/publicDimensions/{{publicDimensionId}}/metadata HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}

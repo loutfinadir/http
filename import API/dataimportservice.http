@@ -15,7 +15,7 @@ Content-Type: application/json
 Accept: application/json
 
 ### Get Metadata
-GET https://{{disDestination}}/models/{{modelID}}/metadata HTTP/1.1
+GET https://{{dataimportservice}}/models/{{modelID}}/metadata HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -26,7 +26,7 @@ Accept: application/json
 
 #### Master Data
 ### Create job for Import data to master table
-POST https://{{disDestination}}/models/{{modelID}} HTTP/1.1
+POST https://{{dataimportservice}}/models/Ckc8171s2ddph4k3sjq7psk3v8 HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: {{X-Csrf-Token}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -50,7 +50,7 @@ Accept: application/json
 
 ###
 ### Post master data on Job
-POST https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
+POST https://{{dataimportservice}}/jobs/{{jobID}} HTTP/1.1
 x-csrf-token: Fetch
 Authorization: {{accessTechToken}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -81,7 +81,7 @@ Accept: application/json
 }
 ### Fact Data
 ### Create job for Import data to Fact Table
-POST https://{{disDestination}}/models/{{modelID}} HTTP/1.1
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: {{X-Csrf-Token}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -105,7 +105,7 @@ Accept: application/json
 }
 
 ### Post data on Job
-POST https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
+POST https://{{dataimportservice}}/jobs/{{jobID}} HTTP/1.1
 x-csrf-token: Fetch
 Authorization: {{accessTechToken}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -144,7 +144,7 @@ Accept: application/json
 }
 
 ### oneClick import
-POST https://{{disDestination}}/import/{{modelID}} HTTP/1.1
+POST https://{{dataimportservice}}/import/{{modelID}} HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: {{X-Csrf-Token}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}

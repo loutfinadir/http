@@ -1,5 +1,5 @@
 ### models create job for importing data
-POST https://{{disDestination}}/models/{{modelID}} HTTP/1.1
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -28,7 +28,7 @@ Accept: application/json
 }
 
 ### Creates an import job for a given public dimension
-POST https://{{disDestination}}/publicDimensions/{{publicDimensionId}} HTTP/1.1
+POST https://{{dataimportservice}}/publicDimensions/{{publicDimensionId}} HTTP/1.1
 Authorization: {{accessTechToken}}
 x-csrf-token: Fetch
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -39,7 +39,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "Mapping": {
-      "ID": "ID"
+    "JobSettings": {
+        "executeWithFailedRows": false
     }
+
 }

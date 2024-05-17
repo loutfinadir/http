@@ -1,5 +1,5 @@
 ### delete job
-DELETE https://{{disDestination}}/jobs/{{jobID}} HTTP/1.1
+DELETE https://{{dataimportservice}}/jobs/{{jobID}} HTTP/1.1
 x-csrf-token: Fetch
 Authorization: {{accessTechToken}}
 x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
@@ -7,3 +7,33 @@ x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
 x-sap-boc-impersonated-user: {{impersonatedUser}}
 Content-Type: application/json
 Accept: application/json
+
+
+### Delete all jobs
+DELETE https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/dis/jobs HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+#x-sap-boc-impersonated-user: {{impersonatedUser}}
+impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+[
+  "75c8ddc7-de74-4140-a6c6-4a3fa9e07644",
+  "0d83e500-4f2d-491f-bf8a-2e40c2c057a6",
+  "99590190-c82a-4b1c-bb20-d9d3e65dfaeb",
+  "05a05a31-d25c-42a5-8844-8755bc5f5539",
+  "e633e2dd-f415-45ed-abec-8c5555d1ffd6",
+  "52d696d9-f8e0-4585-98a8-5dcb59708605",
+  "31c41a3f-9ed6-4923-9f3b-6fc4a03ce31d",
+  "f3640408-4f50-48a9-9d65-550388c191fe",
+  "6d5c054c-2ddd-49e5-b7ec-680a1d420485",
+  "451e150d-6b00-4aaa-819c-05eac67f2b2b",
+  "7e57fc98-f5c5-43ac-89cb-89fc1033dddb",
+  "3a94611b-43cd-4cda-8caa-578410f9b09e",
+  "974c68a9-b5a1-4c4d-a963-bd14752cb378",
+  "65353978-7ce5-4df3-aa72-62995076e528"
+  
+]
