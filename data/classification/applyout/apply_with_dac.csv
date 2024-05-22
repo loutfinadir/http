@@ -1,5 +1,5 @@
 SSN,SSN_Description,SSN_value,ExplanationInfluencer,ExplanationInfluencerValue,ExplanationRank,PredictedCategory,OutlierIndicator,ExplanationStrength,PredictionProbability
-2,C,V2,,0,0,0,,0.36
+2,C,V2,,0,0,0,,0.36,
 2,C,V2,age,48,1,,,0.95,
 2,C,V2,capital_gain,0,6,,,-0.3,
 2,C,V2,capital_loss,0,8,,,-0.11,
