@@ -1,0 +1,12 @@
+Version,SSN,ExplanationInfluencer,ExplanationInfluencerValue,ExplanationRank,PredictedCategory,OutlierIndicator,ExplanationStrength,PredictionProbability
+public.apply_500,1,,,0,0,0,,0.38
+public.apply_500,1,age,49,1,,,0.93,
+public.apply_500,1,capital_gain,0,5,,,-0.3,
+public.apply_500,1,capital_loss,0,8,,,-0.11,
+public.apply_500,1,education_num,9,3,,,-0.64,
+public.apply_500,1,hours_per_week,40,10,,,-0.05,
+public.apply_500,1,marital_status,Married-civ-spouse,4,,,0.6,
+public.apply_500,1,occupation,Craft-repair,6,,,-0.21,
+public.apply_500,1,relationship,Husband,2,,,0.75,
+public.apply_500,1,sex,Male,7,,,0.15,
+public.apply_500,1,workclass,Private,9,,,0.07,
