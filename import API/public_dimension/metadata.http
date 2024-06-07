@@ -1,13 +1,3 @@
-### Get Metadata
-GET https://{{dataimportservice}}/models/Cmbk6h1v29rofv4sah4f0n9md4h/metadata HTTP/1.1
-Authorization: {{accessTechToken}}
-x-csrf-token: Fetch
-x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
-x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
-x-sap-boc-impersonated-user: {{impersonatedUser}}
-Content-Type: application/json
-Accept: application/json
-
 ### get public dimensions
 GET https://{{dataimportservice}}/publicDimensions HTTP/1.1
 Authorization: {{accessTechToken}}

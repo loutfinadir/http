@@ -10,10 +10,6 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "DefaultValues": {
-        "Version": "public.apply_500",
-        "Date": "202407"
-    },
     "Mapping": {
     "Version___ID": "Version",
       "Date___CALMONTH": "Date",

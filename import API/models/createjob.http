@@ -28,3 +28,197 @@ Accept: application/json
     }
 
 }
+
+### models create job for importing data with description
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/dis/models/{{modelID}} HTTP/1.1
+Authorization : {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+#x-sap-boc-impersonated-user: {{impersonatedUser}}
+impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202407"
+    },
+    "Mapping": {
+     "OutlierIndicator___ID": "OutlierIndicator",
+      "Date___CALMONTH": "Date",
+      "SSN___ID": "SSN",
+      "SSN___Description": "SSN_Description",
+      "SSN___value": "SSN_value",
+      "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+      "ExplanationInfluencer___ID": "ExplanationInfluencer",
+      "Version___ID": "Version",
+      "PredictedCategory___ID": "PredictedCategory",
+      "ExplanationRank___ID": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+
+}
+
+
+### models create job for importing data with description and value
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202407"
+    },
+    "Mapping": {
+     "OutlierIndicator___ID": "OutlierIndicator",
+      "Date___CALMONTH": "Date",
+      "SSN___ID": "SSN",
+      "SSN___Description": "SSN_Description",
+      "SSN___value": "SSN_value",
+      "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+      "ExplanationInfluencer___ID": "ExplanationInfluencer",
+      "Version___ID": "Version",
+      "PredictedCategory___ID": "PredictedCategory",
+      "ExplanationRank___ID": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+
+}
+
+### models create job for importing data with description and value
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: e647d8a0-9ea6-4142-890e-38a14939e3da
+x-sap-boc-approuter-orca-context: {"orcaTenantId":"X","orcaTenantName":"E80F1","orcaTenantUuid":"e647d8a0-9ea6-4142-890e-38a14939e3da","orcaTenantLocalId":"X"}
+x-sap-boc-impersonated-user: X_NADIR_NOADMIN
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202407"
+    },
+    "Mapping": {
+     "OutlierIndicator___ID": "OutlierIndicator",
+      "Date___CALMONTH": "Date",
+      "SSN___ID": "SSN",
+      "SSN___Description": "SSN_Description",
+      "SSN___value": "SSN_value",
+      "ExplanationInfluencerValue___ID": "ExplanationInfluencerValue",
+      "ExplanationInfluencer___ID": "ExplanationInfluencer",
+      "Version___ID": "Version",
+      "PredictedCategory___ID": "PredictedCategory",
+      "ExplanationRank___ID": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+
+}
+
+### models create job for importing data with description and value
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202407"
+    },
+    "Mapping": {
+     "OutlierIndicator": "OutlierIndicator",
+      "Date": "Date",
+      "SSN": "SSN",
+      "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+      "ExplanationInfluencer": "ExplanationInfluencer",
+      "Version": "Version",
+      "PredictedCategory": "PredictedCategory",
+      "ExplanationRank": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+
+}
+
+### model Analytic: create job for importing data with description and value
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.Actual"
+    },
+    "Mapping": {
+     "OutlierIndicator": "OutlierIndicator",
+      "SSN": "SSN",
+      "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+      "ExplanationInfluencer": "ExplanationInfluencer",
+      "Version": "Version",
+      "PredictedCategory": "PredictedCategory",
+      "ExplanationRank": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+}
+
+### model Analytic: create job for importing data with column version
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "Mapping": {
+     "OutlierIndicator": "OutlierIndicator",
+      "SSN": "SSN",
+      "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+      "ExplanationInfluencer": "ExplanationInfluencer",
+      "Version": "Version",
+      "PredictedCategory": "PredictedCategory",
+      "ExplanationRank": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+}
+
+### model Analytic: create job for importing data with column version
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "Mapping": {
+     "OutlierIndicator": "OutlierIndicator",
+      "SSN": "SSN",
+      "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+      "ExplanationInfluencer": "ExplanationInfluencer",
+      "Version": "Version",
+      "PredictedCategory": "PredictedCategory",
+      "ExplanationRank": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+}

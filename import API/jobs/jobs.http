@@ -7,3 +7,14 @@ x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
 x-sap-boc-impersonated-user: {{impersonatedUser}}
 Content-Type: application/json
 Accept: application/json
+
+
+### get list of jobs
+GET https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/jobs HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
