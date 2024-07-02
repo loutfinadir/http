@@ -1,4 +1,4 @@
-### Delete all jobs
+### Delete all job
 DELETE https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/jobs HTTP/1.1
 Authorization: {{accessTechToken}}
 x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
