@@ -1,4 +1,4 @@
-﻿SSN,education,income,marital_status,native_country,occupation,race,relationship,sex,workclass,ExplanationInfluencer,ExplanationInfluencerValue,ExplanationRank,PredictedCategory,age,fnlwgt,education_num,capital.gain,capital.loss,hours_per_week,OutlierIndicator,ExplanationStrength,Prediction Probability
+﻿SSN,education,income,marital_status,native_country,occupation,race,relationship,sex,workclass,ExplanationInfluencer,ExplanationInfluencerValue,ExplanationRank,PredictedCategory,age,fnlwgt,education_num,capital_gain,capital_loss,hours_per_week,OutlierIndicator,ExplanationStrength,PredictionProbability
 1,HS-grad,<=50K,Widowed,United-States,?,White,Not-in-family,Female,?,,,0,<=50K,90,77053,9,0,4356,40,0,,0.18
 1,HS-grad,<=50K,Widowed,United-States,?,White,Not-in-family,Female,?,Negative Others,Negative Others,9,,90,77053,9,0,4356,40,,-0.65,
 1,HS-grad,<=50K,Widowed,United-States,?,White,Not-in-family,Female,?,age,90,5,,90,77053,9,0,4356,40,,-1.13,
