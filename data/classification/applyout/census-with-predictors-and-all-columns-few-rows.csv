@@ -1,4 +1,2 @@
 ﻿SSN,education,income,marital_status,native_country,occupation,race,relationship,sex,workclass,ExplanationInfluencer,ExplanationInfluencerValue,ExplanationRank,PredictedCategory,age,fnlwgt,education_num,capital_gain,capital_loss,hours_per_week,OutlierIndicator,ExplanationStrength,PredictionProbability
 1,HS-grad,<=50K,Widowed,United-States,?,White,Not-in-family,Female,?,#,#,0,<=50K,90,77053,9,0,4356,40,#,0,0.18
-
-
