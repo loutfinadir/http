@@ -1,0 +1,29 @@
+{
+  "Data": [
+    {
+      "SSN": 1,
+      "education": "HS-grad",
+      "income": "<=50K",
+      "marital_status": "Widowed",
+      "native_country": "United-States",
+      "occupation": "?",
+      "PredictedCategory": "<=50K",
+      "race": "White",
+      "relationship": "Not-in-family",
+      "sex": "Female",
+      "workclass": "?",
+      "ExplanationInfluencer": "#",
+      "ExplanationInfluencerValue": "#",
+      "ExplanationRank": "0",
+      "OutlierIndicator": "#",
+      "ExplanationStrength": 0,
+      "PredictionProbability": 0.175857946,
+      "age": 90,
+      "capital_gain": 0,
+      "capital_loss": 4356,
+      "hours_per_week": 40,
+      "fnlwgt": 77053,
+      "education_num": 9
+    }
+  ]
+}
