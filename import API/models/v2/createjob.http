@@ -9,11 +9,63 @@ Content-Type: application/json
     "Mapping": {
      "OutlierIndicator": "OutlierIndicator",
       "SSN": "SSN",
+      "Date": "Date",
       "ExplanationInfluencerValue": "ExplanationInfluencerValue",
       "ExplanationInfluencer": "ExplanationInfluencer",
       "Version": "Version",
       "PredictedCategory": "PredictedCategory",
       "ExplanationRank": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+}
+
+### The import type is infered as FactData: The members of dimension should exist before the import
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202401"
+    },
+    "Mapping": {
+     "OutlierIndicator": "OutlierIndicator",
+      "SSN": "SSN",
+      "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+      "ExplanationInfluencer": "ExplanationInfluencer",
+      "Version": "Version",
+      "PredictedCategory": "PredictedCategory",
+      "ExplanationRank": "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+}
+
+### The import type is infered as masterData: The members of dimension should exist before the import
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202401"
+    },
+    "Mapping": {
+       "Version___ID" : "Version",
+      "Date___CALMONTH" : "Date",
+      "ExplanationInfluencer___ID" : "ExplanationInfluencer",
+      "ExplanationInfluencerValue___ID" : "ExplanationInfluencerValue",
+      "SSN___ID" : "SSN",
+      "ExplanationRank___ID" : "ExplanationRank",
+      "PredictedCategory___ID" : "PredictedCategory",
+      "OutlierIndicator___ID" : "OutlierIndicator",
       "ExplanationStrength": "ExplanationStrength",
       "PredictionProbability": "PredictionProbability"
     }

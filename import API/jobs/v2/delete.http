@@ -7,5 +7,14 @@ Content-Type: application/json
 Accept: application/json
 
 [
-  "e05b2aa5-18cf-45a6-b112-45a5a61332b5"
+  "b41230c4-83c4-44ea-9013-8b6bf293b86e"
 ]
+
+###
+DELETE https://{{dataimportservice}}/jobs/{{jobID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+Accept: application/json

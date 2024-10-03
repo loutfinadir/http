@@ -210,6 +210,11 @@ x-sap-boc-impersonated-user: {{impersonatedUser}}
 Content-Type: application/json
 
 {
+    "DefaultValues": {
+        "Version": "public.apply_500",
+        "Date": "202401"
+    },
+
     "Mapping": {
      "OutlierIndicator": "OutlierIndicator",
       "SSN": "SSN",

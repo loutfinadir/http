@@ -1,0 +1,37 @@
+### https://wiki.one.int.sap/wiki/display/OrcaDev/Loggers+endpoint
+GET https://dataimportservice-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/loggers HTTP/1.1
+Authorization: {{accessTechToken}}
+
+###
+POST https://dataexportservice-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/loggers/com.sap.orca.dis.common.request.AbstractPreparedStatementWriter HTTP/1.1
+Authorization: {{accessTechToken}}
+Content-Type: application/json
+
+{
+    "configuredLevel": "DEBUG"
+}
+
+###
+GET https://dataimportservice-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/loggers/com.sap.orca.dis.common.request.AbstractPreparedStatementWriter HTTP/1.1
+Authorization: {{accessTechToken}}
+
+
+###
+GET https://dataimportservice-i051401-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/loggers/com.sap.orca.dis.common.request.AbstractPreparedStatementWriter HTTP/1.1
+Authorization: {{accessTechToken}}
+
+###
+GET https://dataimportservice-i051401-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/loggers HTTP/1.1
+Authorization: {{accessTechToken}}
+
+### health check
+GET https://dataimportservice-i051401-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/health HTTP/1.1
+
+###
+POST https://dataimportservice-i051401-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/loggers/com.sap.orca.dis.common.request.AbstractPreparedStatementWriter HTTP/1.1
+Authorization: {{accessTechToken}}
+Content-Type: application/json
+
+{
+    "configuredLevel": "DEBUG"
+}

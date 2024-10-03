@@ -1,0 +1,68 @@
+
+###
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.Actual",
+        "Date": "202401"
+    },
+    "Mapping": {
+       "Version___ID" : "Version",
+      "Date___CALMONTH" : "Date",
+      "ExplanationInfluencer___ID" : "ExplanationInfluencer",
+      "ExplanationInfluencerValue___ID" : "ExplanationInfluencerValue",
+      "SSN___ID" : "SSN",
+      "ExplanationRank___ID" : "ExplanationRank",
+      "PredictedCategory___ID" : "PredictedCategory",
+      "OutlierIndicator___ID" : "OutlierIndicator",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+}
+
+###
+POST https://{{dataimportservice}}/jobs/{{jobID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: {{X-Csrf-Token}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.Actual",
+        "Date": "202401"
+    },
+    "Mapping": {
+       "Version___ID" : "Version",
+      "Date___CALMONTH" : "Date",
+      "ExplanationInfluencer___ID" : "ExplanationInfluencer",
+      "ExplanationInfluencerValue___ID" : "ExplanationInfluencerValue",
+      "SSN___ID" : "SSN",
+      "ExplanationRank___ID" : "ExplanationRank",
+      "PredictedCategory___ID" : "PredictedCategory",
+      "OutlierIndicator___ID" : "OutlierIndicator",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    },
+  "Data": [
+    {
+      "SSN": "1",
+      "ExplanationInfluencer": "#",
+      "ExplanationInfluencerValue": "#",
+      "ExplanationRank": "0",
+      "PredictedCategory": "#",
+      "OutlierIndicator": "#",
+      "ExplanationStrength": 0,
+      "PredictionProbability": 0.38
+    }
+  ]
+}

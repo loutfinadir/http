@@ -1,0 +1,20 @@
+@startuml
+start
+:Create Job;
+:Push Data to Job;
+:Validate Job;
+if (jobStatus == "READY_FOR_WRITE") then (yes)
+:Run Job;
+repeat
+    :Read Status;
+repeat while (Job processing?) is (yes)
+if (Job failed?) then (yes)
+    :Check invalid rows;
+else (no)
+endif
+stop
+else (no)
+:Check invalid rows;
+endif
+stop
+@enduml

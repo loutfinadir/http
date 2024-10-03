@@ -1,0 +1,72 @@
+
+###
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.apply_2024",
+        "date": "2024-01-01"
+    },
+    "Mapping": {
+        "SSN" : "SSN",
+
+        "PredictedCategory" : "PredictedCategory",
+        "ExplanationInfluencer" : "ExplanationInfluencer",
+        "ExplanationInfluencerValue" : "ExplanationInfluencerValue",
+        "ExplanationRank" : "ExplanationRank",
+        "OutlierIndicator" : "OutlierIndicator",
+        "ExplanationStrength": "ExplanationStrength",
+        "PredictionProbability": "PredictionProbability",
+        "date" : "date",
+        "Version" : "Version"
+    }
+}
+
+###
+POST https://{{dataimportservice}}/jobs/c549eb53-62be-4ac7-a6c6-2290c30121ae HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: {{X-Csrf-Token}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Data": [
+    {
+      "SSN": "1",
+      "PredictedCategory": "<=50K",
+      "ExplanationInfluencer": "#",
+      "ExplanationInfluencerValue": "#",
+      "ExplanationRank": "0",
+      "OutlierIndicator": "#",
+      "ExplanationStrength": 0,
+      "PredictionProbability": 0.175857946
+    }
+  ]
+}
+
+### validate job
+POST https://{{dataimportservice}}/jobs/{{jobID}}/validate HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+
+###
+DELETE https://{{dataimportservice}}/jobs/{{jobID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+Accept: application/json

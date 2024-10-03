@@ -1,0 +1,124 @@
+
+###
+POST https://{{dataimportservice}}/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.Actual",
+        "date": "2024-01-01"
+    },
+    "Mapping": {
+        "SSN" : "SSN",
+        "education" : "education",
+        "income" : "income",
+        "marital_status" : "marital_status",
+        "native_country" : "native_country",
+        "occupation" : "occupation",
+        "PredictedCategory" : "PredictedCategory",
+        "race" : "race",
+        "relationship" : "relationship",
+        "sex" : "sex",
+        "workclass":  "workclass",
+        "ExplanationInfluencer" : "ExplanationInfluencer",
+        "ExplanationInfluencerValue" : "ExplanationInfluencerValue",
+        "ExplanationRank" : "ExplanationRank",
+        "OutlierIndicator" : "OutlierIndicator",
+        "ExplanationStrength": "ExplanationStrength",
+        "PredictionProbability": "PredictionProbability",
+        "date" : "date",
+        "Version" : "Version",
+        
+        "age" : "age",
+        "capital_gain" : "capital_gain",
+        "capital_loss" : "capital_loss",
+        "hours_per_week" : "hours_per_week",
+        "fnlwgt" : "fnlwgt",
+        "education_num" : "education_num"
+
+    }
+}
+
+###
+POST https://{{dataimportservice}}/jobs/0af592fc-cbb8-4200-9b1e-3c01fee6f41d HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: {{X-Csrf-Token}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Data": [
+    {
+      "SSN": "2",
+      "education": "HS-grad",
+      "income": "<=50K",
+      "marital_status": "Widowed",
+      "native_country": "United-States",
+      "occupation": "Exec-managerial",
+      "race": "White",
+      "relationship": "Not-in-family",
+      "sex": "Female",
+      "workclass": "Private",
+      "ExplanationInfluencer": "#",
+      "ExplanationInfluencerValue": "#",
+      "ExplanationRank": "0",
+      "PredictedCategory": "<=50K",
+      "age": "82",
+      "fnlwgt": "132870",
+      "education_num": "9",
+      "capital_gain": "0",
+      "capital_loss": "4356",
+      "hours_per_week": "18",
+      "OutlierIndicator": "#",
+      "ExplanationStrength": "0",
+      "PredictionProbability": "0.6666"
+
+    }
+  ]
+}
+
+### validate job
+POST https://{{dataimportservice}}/jobs/{{jobID}}/validate HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+
+### run job
+POST https://{{dataimportservice}}/jobs/0af592fc-cbb8-4200-9b1e-3c01fee6f41d/run HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### job status
+GET https://{{dataimportservice}}/jobs/0af592fc-cbb8-4200-9b1e-3c01fee6f41d/status HTTP/1.1
+x-csrf-token: Fetch
+Authorization: {{accessTechToken}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+###
+DELETE https://{{dataimportservice}}/jobs/{{jobID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+Accept: application/json

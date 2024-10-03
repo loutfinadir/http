@@ -1,0 +1,155 @@
+### Get Metadata
+GET https://{{dataimportservice}}/models/C4181d018fik148bo260coing1i/metadata HTTP/1.1
+Authorization: {{accessTechToken}}
+x-csrf-token: Fetch
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+### The import type is infered as masterData: The members of dimension should exist before the import
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "disJobSettings": {
+    "DefaultValues": {
+      "Version": "public.census_apply",
+      "date": "202401"
+    },
+    "Mapping": {
+      "education": "education",
+      "SSN": "SSN",
+      "income": "income",
+      "marital_status": "marital_status",
+      "native_country": "native_country",
+      "occupation": "occupation",
+      "race": "race",
+      "relationship": "relationship",
+      "sex": "sex",
+      "workclass": "workclass",
+      "ExplanationInfluencer": "ExplanationInfluencer",
+      "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+      "ExplanationRank": "ExplanationRank",
+      "PredictedCategory": "PredictedCategory",
+      "OutlierIndicator": "OutlierIndicator",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability",
+
+
+      "date": "date",
+      "Version": "Version"
+    },
+    "JobSettings": {
+      "ignoreAdditionalColumns": false
+    }
+  },
+  "disDataSettings": {
+    "modelID": "C4181d018fik148bo260coing1i",
+    "importType": "factData",
+    "dataSourceUrl": "https://raw.githubusercontent.com/loutfinadir/http/refs/heads/main/data/classification/applyout/census.json",
+    "chunkSize": 1
+  }
+}
+
+### The import with Dimension scope
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "disJobSettings": {
+    "DefaultValues": {
+      "Version": "public.census_apply",
+      "date": "202401"
+    },
+    "Mapping": {
+      "education": "education",
+      "SSN": "SSN",
+      "income": "income",
+      "marital_status": "marital_status",
+      "native_country": "native_country",
+      "occupation": "occupation",
+      "race": "race",
+      "relationship": "relationship",
+      "sex": "sex",
+      "workclass": "workclass",
+      "ExplanationInfluencer": "ExplanationInfluencer",
+      "ExplanationInfluencerValue": "ExplanationInfluencerValue",
+      "ExplanationRank": "ExplanationRank",
+      "PredictedCategory": "PredictedCategory",
+      "OutlierIndicator": "OutlierIndicator",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability",
+
+
+      "date": "date",
+      "Version": "Version"
+    },
+    "JobSettings": {
+      "ignoreAdditionalColumns": false,
+      "importMethod": "CleanAndReplace", 
+			"dimensionScope": ["Version", "SSN"] 
+    }
+  },
+  "disDataSettings": {
+    "modelID": "C4181d018fik148bo260coing1i",
+    "importType": "factData",
+    "dataSourceUrl": "https://raw.githubusercontent.com/loutfinadir/http/refs/heads/main/data/classification/applyout/census.json",
+    "chunkSize": 1,
+    "jsonData": {
+      "Data": [
+        {
+          "SSN": 2,
+          "education": "HS-grad",
+          "income": "<=50K",
+          "marital_status": "Widowed",
+          "native_country": "United-States",
+          "occupation": "?",
+          "PredictedCategory": "<=50K",
+          "race": "White",
+          "relationship": "Not-in-family",
+          "sex": "Female",
+          "workclass": "?",
+          "ExplanationInfluencer": "#",
+          "ExplanationInfluencerValue": "#",
+          "ExplanationRank": "0",
+          "OutlierIndicator": "aa",
+          "ExplanationStrength": 0,
+          "PredictionProbability": 0.175857946
+        }
+      ]
+    }
+  }
+}
+
+###
+- Update:
+  - Copying data from version input to version output
+  - Updating the version output with dimension keys, explanations, and predictors does not require setting all measures (excluded extra-predictors)
+- Clean and Replace
+### job status
+GET https://{{dataimportservice}}/jobs/1b78472c-7fe3-4dc4-983d-0c3ca6db8e88/status HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+Accept: application/json
+
+### Delete job
+DELETE https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/jobs/C4181d018fik148bo260coing1i
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Accept: application/json
+

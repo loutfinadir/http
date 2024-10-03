@@ -1,0 +1,149 @@
+
+### The import type is infered as FactData: The members of dimension should exist before the import
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.census_2024",
+        "date": "2024-01-01"
+    },
+    "Mapping": {
+      "date" : "date",
+      "SSN" : "SSN",
+      "workclass" : "workclass",
+      "education" : "education",
+      "marital_status" : "marital_status",
+      "occupation" : "occupation",
+      "relationship" : "relationship",
+      "race" : "race",
+      "sex" : "sex",
+      "native_country" : "native_country",
+      "income" : "income",
+      "Version" : "Version",
+      "OutlierIndicator" : "OutlierIndicator",
+      "ExplanationInfluencerValue" : "ExplanationInfluencerValue",
+      "ExplanationInfluencer" : "ExplanationInfluencer",
+      "PredictedCategory" : "PredictedCategory",
+      "ExplanationRank" : "ExplanationRank",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability"
+    }
+}
+
+###
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.census_2024",
+        "date": "2024-01-01"
+    },
+    "Mapping": {
+        "SSN___ID" : "SSN",
+        "education___ID" : "education",
+        "income___ID" : "income",
+        "marital_status___ID" : "marital_status",
+        "native_country___ID" : "native_country",
+        "occupation___ID" : "occupation",
+        "PredictedCategory___ID" : "PredictedCategory",
+        "race___ID" : "race",
+        "relationship___ID" : "relationship",
+        "sex___ID" : "sex",
+        "workclass___ID":  "workclass",
+        "ExplanationInfluencer___ID" : "ExplanationInfluencer",
+        "ExplanationInfluencerValue___ID" : "ExplanationInfluencerValue",
+        "ExplanationRank___ID" : "ExplanationRank",
+        "OutlierIndicator___ID" : "OutlierIndicator",
+        "ExplanationStrength": "ExplanationStrength",
+        "PredictionProbability": "PredictionProbability",
+        "date___DATE" : "date",
+        "Version___ID" : "Version"
+    }
+}
+
+### The import type is infered as masterData: The members of dimension should exist before the import
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "disJobSetting": {
+    "DefaultValues": {
+        "Version": "public.census_apply",
+        "date": "2024-01-01"
+    },
+    "Mapping": {
+        "SSN" : "SSN",
+        "education" : "education",
+        "income" : "income",
+        "marital_status" : "marital_status",
+        "native_country" : "native_country",
+        "occupation" : "occupation",
+        "PredictedCategory" : "PredictedCategory",
+        "race" : "race",
+        "relationship" : "relationship",
+        "sex" : "sex",
+        "workclass":  "workclass",
+        "ExplanationInfluencer" : "ExplanationInfluencer",
+        "ExplanationInfluencerValue" : "ExplanationInfluencerValue",
+        "ExplanationRank" : "ExplanationRank",
+        "OutlierIndicator" : "OutlierIndicator",
+        "ExplanationStrength": "ExplanationStrength",
+        "PredictionProbability": "PredictionProbability",
+        "date" : "date",
+        "Version" : "Version",
+        
+        "age" : "age",
+        "capital_gain" : "capital_gain",
+        "capital_loss" : "capital_loss",
+        "hours_per_week" : "hours_per_week",
+        "fnlwgt" : "fnlwgt",
+        "education_num" : "education_num"
+
+    }
+    },
+    "dataSourceUrl": "https://raw.githubusercontent.com/loutfinadir/http/refs/heads/main/data/classification/applyout/census-with-predictors-min-rows.csv"
+}
+
+#### only SSN as key
+POST https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}} HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+
+{
+    "DefaultValues": {
+        "Version": "public.census_2024",
+        "date": "2024-01-01"
+    },
+    "Mapping": {
+      "SSN___ID" : "SSN",
+      "PredictedCategory___ID" : "PredictedCategory",
+      "ExplanationInfluencer___ID" : "ExplanationInfluencer",
+      "ExplanationInfluencerValue___ID" : "ExplanationInfluencerValue",
+      "ExplanationRank___ID" : "ExplanationRank",
+      "OutlierIndicator___ID" : "OutlierIndicator",
+      "ExplanationStrength": "ExplanationStrength",
+      "PredictionProbability": "PredictionProbability",
+      "date___DATE" : "date",
+      "Version___ID" : "Version"
+     }
+}
+
+### ping
+GET https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/ping HTTP/1.1
+Authorization: {{accessTechToken}}
+#x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json

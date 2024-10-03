@@ -1,7 +1,23 @@
+### Code reside in dataexportservice in
+### getFactMetadata method of SacDataProvider class
+### getMetadataForResourceId method of ContentLibProcessor class
+### getMetadataListFromContentLibResponse method of ContentLibMetadataProcessor class
+### see getMetadataListByType method of ContentLibMetadataProcessor class
+https://smartpredict-newfeature-t01.orcastarkiller.canary.eu10.projectorca.cloud/dataexportservice/providers/sac/Chbo2n1dlo051ka88b17haco47/$metadata?$format=application/json
 ### Get Metadata
 GET https://ppro-firefly-dis-sac-orcastarkiller.cfapps.sap.hana.ondemand.com/cloud/v2/dis/models/{{modelID}}/metadata HTTP/1.1
 Authorization: {{accessTechToken}}
 x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
 x-sap-boc-impersonated-user: {{impersonatedUser}}
+Content-Type: application/json
+Accept: application/json
+
+
+### Get Metadata
+GET https://{{dataimportservice}}/models/{{modelID}}/metadata HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
 Content-Type: application/json
 Accept: application/json

@@ -5,3 +5,13 @@ x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
 x-sap-boc-impersonated-user: {{impersonatedUser}}
 Content-Type: application/json
 Accept: application/json
+
+
+### job status
+GET https://{{dataimportservice}}/jobs/{{jobID}}/status HTTP/1.1
+Authorization: {{accessTechToken}}
+x-sap-boc-approuter-orca-context: {{X-Sap-Boc-Approuter-Orca-Context}}
+x-sap-boc-impersonated-user: {{impersonatedUser}}
+x-sap-boc-tenant-id: {{X-Sap-Boc-Tenant-id}}
+Content-Type: application/json
+Accept: application/json

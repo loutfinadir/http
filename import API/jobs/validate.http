@@ -10,7 +10,7 @@ Accept: application/json
 
 
 ### validate job
-POST https://{{dataimportservice}}/jobs/c5d5be52-be61-479c-ad84-8420d2bfc73d/validate HTTP/1.1
+POST https://{{dataimportservice}}/jobs/8df44f52-be38-4e76-9c17-00d0c2745e82/validate HTTP/1.1
 x-csrf-token: Fetch
 Authorization: {{accessTechToken}}
 x-sap-boc-tenant-id: e647d8a0-9ea6-4142-890e-38a14939e3da
